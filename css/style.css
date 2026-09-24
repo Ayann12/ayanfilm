@@ -24,5 +24,20 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 16px;
+    gap: 16px;
     background-color: #eaeaea;
+}
+
+.movie {
+    width: 100%;
+    height: 350px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+.movie img {
+    width: 100%;
+    height: 50%;
+
+    object-fit: cover;
 }
