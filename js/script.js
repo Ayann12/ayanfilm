@@ -13,11 +13,28 @@ async function getMovies(url) {
     showMovies(data.results)
 }
 
+function nextPage() {
+    page += 1;
+}
+
+function prevPage() {
+    page -= 1;
+}
+
+next.addEventListener("click", () => {
+    alert("testing next")
+})
+
+prev.addEventListener("click", () => {
+    alert("testing prev")
+})
+
 
 function showMovies(movies) {
     moviesElement.innerHTML = ''
     movies.forEach(movie => {
-        const { title, poster_path, overview } = movie
+        const { title, poster_path, overview, popularity, vote_average } = movie
+
         const movieCard = document.createElement("div")
         movieCard.classList.add("movie")
 
