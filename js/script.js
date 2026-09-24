@@ -2,7 +2,7 @@ const API_KEY = "1ab7beeaa8458f65d10a2c22c4f07fda"
 
 let page = 1;
 
-const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}`
+const API_URL = () => `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}`
 const API_IMAGE_URL = "https://image.tmdb.org/t/p/w1280"
 
 
@@ -13,20 +13,31 @@ async function getMovies(url) {
     showMovies(data.results)
 }
 
+function updatePage() {
+    getMovies(API_URL())
+    currentPage.innerHTML = page
+}
+
 function nextPage() {
-    page += 1;
+    if (page >= 1) {
+        page += 1;
+        updatePage()
+    }
 }
 
 function prevPage() {
-    page -= 1;
+    if (page > 1) {
+        page -= 1;
+        updatePage()
+    }
 }
 
 next.addEventListener("click", () => {
-    alert("testing next")
+    nextPage()
 })
 
 prev.addEventListener("click", () => {
-    alert("testing prev")
+    prevPage()
 })
 
 
@@ -52,4 +63,4 @@ function showMovies(movies) {
 
 }
 
-getMovies(API_URL)
+updatePage()
