@@ -1,0 +1,28 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(252, 209, 180);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+
+.searchInput {
+    background-color: transparent;
+    padding: 8px 16px;
+    border: ipx solid black;
+    border-radius: 8px;
+}
+
+#movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    background-color: #eaeaea;
+}
