@@ -20,7 +20,7 @@ header {
     border-radius: 8px;
 }
 
-#movies {
+#moviesElement {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 16px;
